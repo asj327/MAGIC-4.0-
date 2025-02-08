@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-Dark Mode</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="toggle-container">
+        <button class="theme-button" id="themeButton">Click to transition</button>
+    </div>
+
+    <div class="content">
+        <h1>Light-Dark Mode</h1>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeButton = document.getElementById('themeButton');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        } else {
+            body.classList.add('light-mode'); // Default to light mode
+        }
+
+        themeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    </script>
+
+</body>
+</html>

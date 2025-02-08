@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f8f8f8;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.theme-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee; /* Light mode default */
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+body.dark-mode .theme-button {
+    background-color: #555; /* Dark mode style */
+    color: #eee;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
